@@ -1,0 +1,39 @@
+{
+  "dataDirectory": "data/titanic",
+  "features": ["Pclass", "Age", "Name"],
+  "label": "Survived",
+  "includeInPredictFile": ["PassengerId"],
+  "pipeline": [
+    {
+      "name": "name",
+      "class": "src.preprocessing.name.NameExtractor",
+      "args": [],
+      "kwargs": {}
+    },
+    {
+      "name": "age_transformer",
+      "class": "src.preprocessing.age.AgeTransformer",
+      "args": [],
+      "kwargs": {}
+    },
+    {
+      "name": "one_hot_encoder",
+      "class": "sklearn.preprocessing.OneHotEncoder",
+      "args": [],
+      "kwargs": {"handle_unknown": "ignore"}
+    },
+    {
+      "name": "scaler",
+      "class": "sklearn.preprocessing.StandardScaler",
+      "args": ["Pclass"],
+      "kwargs": {"with_mean": false},
+      "comment": "# Does nothing, if with_mean is False, fails because it is a sparse matrix"
+    },
+    {
+      "name": "regression",
+      "class": "sklearn.linear_model.LogisticRegression",
+      "args": [],
+      "kwargs": {}
+    }
+  ]
+}
