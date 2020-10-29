@@ -12,7 +12,7 @@ def main():
     with open(f"../../params/{sys.argv[1]}") as f:
         parameters = json.load(f)
 
-    df_train = pd.read_csv(f"../../{parameters['data_directory']}/train.csv")
+    df_train = pd.read_csv(f"../../{parameters['dataDirectory']}/train.csv")
 
     label = parameters["label"]
     x_train = df_train[parameters["features"]]
