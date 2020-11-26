@@ -2,3 +2,4 @@ data
 params/ckpts
 .idea
 .vscode
+venv/
