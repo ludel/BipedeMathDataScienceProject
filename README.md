@@ -17,7 +17,7 @@ Ce script permet de générer des recommandations pour une produit ou un client 
 `python3 compute_recommendations.py --data=/path/to/dataset/directory --client-id=971bf8f42a9f8cb3ead257854905b454 --product-id=595fac2a385ac33a80bd5114aec74eb8`
 
 #### Arguments optionnels
-`--import-clustered-data` permet d'utiliser les clusters générés précedament.
+`--import-clustered-data` permet d'utiliser les clusters générés précédemment.
 
 `--nb-cluster` permet de définir le nombre de cluster (60 par défaut).
 
